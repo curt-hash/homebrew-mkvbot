@@ -5,21 +5,21 @@
 class Mkvbot < Formula
   desc "Automation for makemkv"
   homepage "https://github.com/curt-hash/mkvbot"
-  version "0.5.3"
+  version "0.5.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.3/mkvbot_Darwin_x86_64.tar.gz"
-      sha256 "9f66c35fa9dab3c98eccdf36395d885393524bd7116bc7b8569ea7acb43349bb"
+      url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.4/mkvbot_Darwin_x86_64.tar.gz"
+      sha256 "2e2b14337a2f71ceb7af527952cfbcc4fffe627c89c85a83c02b756d9623679a"
 
       def install
         bin.install "mkvbot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.3/mkvbot_Darwin_arm64.tar.gz"
-      sha256 "64fecccd81e3c05f5e62273b499cb67221a20bd550cb65cbb7b09e1af865e6b5"
+      url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.4/mkvbot_Darwin_arm64.tar.gz"
+      sha256 "1a6ecbfdb9826d0de258dd03bbff30742d857d2a1f1d5f842c9ec0ad99697768"
 
       def install
         bin.install "mkvbot"
@@ -28,24 +28,18 @@ class Mkvbot < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.3/mkvbot_Linux_x86_64.tar.gz"
-        sha256 "f0cdee1f10fe22313e0f2f66d02f3f43ae30b76b522f6eab3b5ad0b2a34763ee"
-
-        def install
-          bin.install "mkvbot"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.4/mkvbot_Linux_x86_64.tar.gz"
+      sha256 "b12e7c37c9bce182c76f9a4ccf1e0655d331fbe8559c1b689919fc36f99beb27"
+      def install
+        bin.install "mkvbot"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.3/mkvbot_Linux_arm64.tar.gz"
-        sha256 "a466926dbde4bedb79d54d91797e250c38656e910a075ff70ceb3a14256ddf30"
-
-        def install
-          bin.install "mkvbot"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/curt-hash/mkvbot/releases/download/v0.5.4/mkvbot_Linux_arm64.tar.gz"
+      sha256 "1c7792476543445a8580e0e65666043bedfe9e3ebd6a4818ffe5c61bdb43e965"
+      def install
+        bin.install "mkvbot"
       end
     end
   end
